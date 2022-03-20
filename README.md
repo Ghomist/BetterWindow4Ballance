@@ -1,4 +1,4 @@
-# Debug Mod for Ballance
+# Better Window for Ballance
 
 这是一个用于 [Ballance](https://ballance.jxpxxzj.cn) 的 Mod，旨在让 Ballance 窗口有更加正常的体验。
 
