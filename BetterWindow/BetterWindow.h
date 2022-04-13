@@ -1,5 +1,6 @@
 #pragma once
 
+#include <memory>
 #include <BML/BMLAll.h>
 
 extern "C" {
@@ -23,4 +24,8 @@ private:
 	HWND m_window = NULL;
 	bool m_cmdTyping = false;
 	InputHook* m_im = nullptr;
+	IProperty* auto_mode = nullptr;
+	IProperty* hot_key = nullptr;
+	bool key_to_block = false;
+	std::unique_ptr<BGui::Label> tip_lable = nullptr;
 };

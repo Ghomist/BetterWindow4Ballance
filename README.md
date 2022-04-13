@@ -6,8 +6,9 @@
 
 - [BallanceModLoader](https://github.com/Gamepiaynmo/BallanceModLoader/releases)
 
-## 功能
+## 功能列表
 
-- 阻止窗口在**非聚焦情境**下获取输入（方便将 Ballance 切至后台）
+- 自动阻止窗口在后台获取键盘原始输入（方便将 Ballance 切至后台）
+	- 此功能默认开启，可在设置中选择关闭
+- 通过快捷键阻挡 Ballance 获取键盘输入
 - `Alt + F4` 可快速退出游戏
-
