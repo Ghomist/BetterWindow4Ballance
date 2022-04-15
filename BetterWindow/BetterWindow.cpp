@@ -9,12 +9,12 @@ void BetterWindow::OnLoad() {
 	m_window = (HWND)m_bml->GetRenderContext()->GetWindowHandle();
 	m_im = m_bml->GetInputManager();
 
-	GetConfig()->SetCategoryComment("Mode", "Mod settings.");
-	auto_mode = GetConfig()->GetProperty("Mode", "Auto Enable");
+	GetConfig()->SetCategoryComment("Mode", "Mod Settings.");
+	auto_mode = GetConfig()->GetProperty("Mode", "AutoEnable");
 	auto_mode->SetComment("Auto block input when out of focus.");
 	auto_mode->SetDefaultBoolean(true);
 
-	hot_key = GetConfig()->GetProperty("Mode", "Hot Key");
+	hot_key = GetConfig()->GetProperty("Mode", "HotKey");
 	hot_key->SetComment("Hot key to block input forcibly.");
 	hot_key->SetDefaultKey(CKKEY_F4);
 

@@ -21,11 +21,11 @@ public:
 	virtual void OnProcess();
 
 private:
-	HWND m_window = NULL;
+	HWND m_window;
 	bool m_cmdTyping = false;
-	InputHook* m_im = nullptr;
-	IProperty* auto_mode = nullptr;
-	IProperty* hot_key = nullptr;
+	InputHook* m_im;
+	IProperty* auto_mode;
+	IProperty* hot_key;
 	bool key_to_block = false;
-	std::unique_ptr<BGui::Label> tip_lable = nullptr;
+	std::unique_ptr<BGui::Label> tip_lable;
 };
