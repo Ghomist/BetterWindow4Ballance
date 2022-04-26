@@ -1,5 +1,7 @@
 #pragma once
 
+#include <Windows.h>
+#include <imm.h>
 #include <memory>
 #include <BML/BMLAll.h>
 
@@ -26,6 +28,7 @@ private:
 	InputHook* m_im;
 	IProperty* auto_mode;
 	IProperty* hot_key;
+	IProperty* disable_ime;
 	bool key_to_block = false;
 	std::unique_ptr<BGui::Label> tip_lable;
 };
