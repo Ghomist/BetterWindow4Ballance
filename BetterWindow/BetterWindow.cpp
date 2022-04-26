@@ -14,6 +14,10 @@ void BetterWindow::OnLoad() {
 	auto_mode->SetComment("Auto block input when out of focus.");
 	auto_mode->SetDefaultBoolean(true);
 
+	disable_ime = GetConfig()->GetProperty("Mode", "DisableIME");
+	disable_ime->SetComment("Disable ingame IME. Restart game to apply it.");
+	disable_ime->SetDefaultBoolean(true);
+
 	hot_key = GetConfig()->GetProperty("Mode", "HotKey");
 	hot_key->SetComment("Hot key to block input forcibly.");
 	hot_key->SetDefaultKey(CKKEY_F4);
@@ -24,6 +28,16 @@ void BetterWindow::OnLoad() {
 	tip_lable->SetSize(Vx2DVector(1.0f, 0.0353f));
 	tip_lable->SetAlignment(ALIGN_CENTER);
 	tip_lable->SetText("INPUT BLOCKED");
+
+	if (disable_ime->GetBoolean()) {
+		// Get input context for backup. 
+		HIMC m_hImc = ImmGetContext(m_window);
+		// Remove association the testing 
+		if (m_hImc)
+			ImmAssociateContext(m_window, NULL);
+		// Release input context
+		ImmReleaseContext(m_window, m_hImc);
+	}
 }
 
 void BetterWindow::OnProcess() {
